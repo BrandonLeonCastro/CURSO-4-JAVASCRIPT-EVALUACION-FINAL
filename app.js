@@ -1,3 +1,7 @@
+var valora;
+var valorb;
+var operacion;
+
 function init(){
   var uno = document.getElementById('1');
   var dos = document.getElementById('2');
@@ -49,4 +53,63 @@ function init(){
   cero.onclick = function(num){
     display.textContent = display.textContent + "0";
   }
+  on.onclick = function(num){
+    resetear();
+  }
+  suma.onclick = function(num){
+    valora = display.textContent;
+    operacion = "+"
+    limpiar();
+  }
+  resta.onclick = function(num){
+    valora = display.textContent;
+    operacion = "-"
+    limpiar();
+  }
+  multiplicacion.onclick = function(num){
+    valora = display.textContent;
+    operacion = "*"
+    limpiar();
+  }
+  division.onclick = function(num){
+    valora = display.textContent;
+    operacion = "/"
+    limpiar();
+  }
+  igual.onclick = function(num){
+    valorb = display.textContent;
+    resolver();
+  }
+}
+
+function limpiar(){
+  display.textContent = "";
+}
+
+function resetear(){
+  display.textContent = "";
+  valora = 0;
+  valorb = 0;
+  operacion = "";
+}
+
+function resolver(){
+  var res = 0;
+  switch(operacion){
+    case "+":
+         res = parseFloat(valora) + parseFloat(valorb);
+         break;
+    case "-":
+         res = parseFloat(valora) - parseFloat(valorb);
+         break;
+    case "*":
+         res = parseFloat(valora) * parseFloat(valorb);
+         break;
+    case "/":
+         res = parseFloat(valora) / parseFloat(valorb);
+         break;
+
+  }
+  resetear();
+  display.textContent = res;
 }
