@@ -82,6 +82,10 @@ function init(){
   }
 }
 
+function engrandecer() {
+document.getElementById().setAttribute("style", "transform:scale(1,1)")
+}
+
 function limpiar(){
   display.textContent = "";
 }
@@ -112,4 +116,12 @@ function resolver(){
   }
   resetear();
   display.textContent = res;
+}
+
+function reducir(rr) {
+document.getElementById(rr).setAttribute("style", "transform:scale(0.95,0.95)")
+}
+
+function engrandecer(rr) {
+document.getElementById(rr).setAttribute("style", "transform:scale(1,1)")
 }
