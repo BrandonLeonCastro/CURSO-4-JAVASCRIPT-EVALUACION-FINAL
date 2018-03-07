@@ -44,9 +44,8 @@ function init(){
   var pantalla = document.getElementById('display');
   var signo = document.getElementById('sign');
 
-  signo.onclick = function(num){
-    display.textContent = "-" + display.textContent
-    signo();
+  signo.onclick = function(){
+    signo_();
   }
 
   suma.onclick = function(num){
@@ -75,7 +74,7 @@ function init(){
   }
 }
 
-function signo(){
+function signo_(){
   var cadena = display.innerHTML
         var i = cadena.indexOf("-")
         if (i == -1){
@@ -83,6 +82,9 @@ function signo(){
         } else{
             cadena = cadena.substring(1,cadena.length)
             display.innerHTML = cadena
+        }
+        if(cadena == 0){
+          display.innerHTML = "" + cadena
         }
 }
 
@@ -116,4 +118,5 @@ function resolver(){
   }
   resetear();
   display.textContent = res;
+  pantalla.innerHTML = pantalla.innerHTML.substring(0, 9)
 }
