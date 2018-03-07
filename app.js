@@ -13,7 +13,7 @@ console.log(aux);
 if(aux.indexOf(".") != (-1)){
   if(numero!="."){
     pantalla.innerHTML += numero
-    pantalla.innerHTML = pantalla.innerHTML.substring(0, 9)
+    pantalla.innerHTML = pantalla.innerHTML.substring(0, 8)
    }
  }
 else{
@@ -118,5 +118,5 @@ function resolver(){
   }
   resetear();
   display.textContent = res;
-  pantalla.innerHTML = pantalla.innerHTML.substring(0, 9)
+  pantalla.innerHTML = pantalla.innerHTML.substring(0, 8)
 }
